@@ -25,10 +25,13 @@ function menuOpen() {
   menuButton = document.getElementById("menu-button");
   if (mobileMenu.style.display === "flex") {
     mobileMenu.style.display = "none";    
-    menuButton.className = "fa-solid fa-bars";   
-  } else {
+    menuButton.className = "fa-solid fa-bars";  
+    document.body.style.overflow = "visible"; 
+  } else {    
     mobileMenu.style.display = "flex";    
     menuButton.className = "fa-solid fa-x";    
+    document.body.style.overflow = "hidden";
+    // document.documentElement.style.overflow = "hidden";
   }
 }
 
@@ -95,7 +98,7 @@ function lecturesDates() {
   let lectureDay = document.getElementsByClassName("lecture-date");
   let i;
   for (i = 0; i < 8; i++) {    
-    let courseStartDate = new Date("12/17/2023"); // Set start date every new course (mm/dd.yyyy)
+    let courseStartDate = new Date("05/26/2024"); // Set start date every new course (mm/dd.yyyy)
     courseStartDate.setDate(courseStartDate.getDate() + i * 7);  
     lectureDay[i].textContent = courseStartDate.toLocaleDateString('ru');
   }

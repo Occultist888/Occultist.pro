@@ -15,6 +15,16 @@ html {
   scroll-behavior: smooth;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 /* BOOKMARKS */
 #programm,
 #reviews,
@@ -69,7 +79,7 @@ button {
 }
 
 .sticky {
-  z-index: 999999; /* block is above any other */
+  z-index: 999998; /*block is above any other*/
   position: fixed;
   top: 0;
   width: 100%
@@ -226,13 +236,14 @@ button {
   color: white;
   margin-bottom: -5px;  
   font-size: 24px;
-  line-height: 1;
+  line-height: 1;  
 }
 
 
 .header-background img {    
     border-radius: 30px;  
     filter: brightness(20%);
+    
 }
   
 
@@ -289,21 +300,62 @@ button {
 
 /* Centered text */
 .centered {
-  position: absolute;
-  text-align: left;
-  
+  position: absolute; 
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
   font-weight: 300;
-  top: 25%;
-  margin: 0px 20px;
+  top: 23%;  
 
 }
+
 .centered p {
     margin-top: 15px; 
     margin-bottom: 15px;
 }
 
-.centered .hello-audio {
-    display: none;
+
+.centered .video-button {
+  display: none;
+  background-color: rgb(79, 0, 147);  
+  color: white;
+  /* border: 2px dotted white; */
+  border-radius: 100px;  
+  font-weight: 400;    
+  height: 80px;
+  width: 100%;
+  max-width: 400px;
+  transition: 0.3s;
+}
+
+.centered .video-button:hover {
+  background-color: rgb(71, 0, 132);  
+  font-size: 105%;
+  transition: 0.3s;
+}
+
+#video-menu {   
+  display: none;  
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 400;
+  list-style-type: none; 
+  gap: 10px;
+  min-height: 100%; 
+  background-color: black;
+  opacity: 90%;
+  height:100vh;    
+}
+
+.centered .video-offer {    
+    border: 0;
+    border-radius: 30px;
+    width: auto;
+    height: 300px;
 }
 
 
@@ -349,13 +401,14 @@ button {
   background-color: rgb(38, 38, 38);
   padding: 30px 20px;  
   width: 100%;
-  
+  transition: 0.2s;
 }
 
 .header-signin-button:hover {
   color: white;     
   background-color: black;
   /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); */
+  transition: 0.2s;
 }
 
 .content {
@@ -929,10 +982,11 @@ button {
     min-height: 100%; 
     background-color: rgb(245, 245, 245);
     height:100vh;
+      
   }
 
   #mobile-menu li {      
-      display: flex;
+      display: flex;      
   }      
 
   #mobile-menu li:last-child {
@@ -1017,17 +1071,14 @@ button {
   /* Centered text */
   .centered {
     margin-top: 60px;
+    margin-right: 60px;
     margin-bottom: 40px;
   }
-    
-  .centered i {
-      display: none;
+
+  .centered .video-button {
+    display: block;    
   }
-  .centered i .hello-audio {
-      display: block; 
-  }      
-
-
+    
   .two-buttons h3 {
       font-size: 20px;
   }
