@@ -2,6 +2,7 @@
   --clr-green: #56d9c9;
   --clr-gray: rgb(245, 245, 245);
   --clr-black: rgb(38, 38, 38);
+  --clr-purple: rgb(79, 0, 147);  
 }
 
 * {  
@@ -319,7 +320,7 @@ button {
 
 .centered .video-button {
   display: none;
-  background-color: rgb(79, 0, 147);  
+  background-color: var(--clr-purple);
   color: white;
   /* border: 2px dotted white; */
   border-radius: 100px;  
@@ -585,9 +586,10 @@ button {
 .how-to-study {
   display: flex;
   justify-content: left;
+  align-items: center;
   flex-direction: column;
 }
-   
+
   
 .how-to-study h3 {
     text-align: left;
@@ -606,6 +608,24 @@ button {
     padding-bottom: 20px;
     line-height: 1.5;    
  }
+
+.how-to-study .arrow-divider {
+  
+  line-height: 42px;
+  vertical-align: middle;
+    
+  z-index: 99999;
+  text-align: center;
+  color: var(--clr-black);
+  font-size: 30px;    
+  background-color: var(--clr-green);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;  
+  padding-left: 5px;
+  margin: -20px;
+  margin-top: 200px ;
+}
 
 .reviews {
   display: flex;
@@ -979,7 +999,7 @@ button {
 }
 
 
-@media screen and (max-width: 800px) { //old 670px
+@media screen and (max-width: 800px) { /* old 670px */
 
   #programm,
   #reviews,
@@ -1242,10 +1262,21 @@ button {
 
   .how-to-study .cards-how-to-study {
       flex-direction: column;
+      align-items: center;
+  }
+
+  .how-to-study .arrow-divider {  
+     
+    rotate: 90deg;
+    
+    width: 40px;
+    height: 40px;      
+    margin: -20px;
+    margin-top: -10px;    
   }
 
   .how-to-study .cards-how-to-study .card-how-to-study {
-        margin-bottom: 10px;
+        margin-bottom: -10px;
   }
 
   .reviews {
@@ -1255,7 +1286,7 @@ button {
   
   .reviews h3 {
     font-size: 30px;
-  }
+  }i
   
   .reviews p {
     flex-direction: column;    
