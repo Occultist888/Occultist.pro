@@ -16,12 +16,19 @@
   <script src="https://kit.fontawesome.com/f337f94cc3.js" crossorigin="anonymous"></script>
     
   <script src="./scripts/main.js"></script> 
+  <script src="https://www.youtube.com/iframe_api"></script>
   <title>Курс Рунической Магии</title>
 </head>
 <body>
+    
   
   <div class="navbar sticky">
-    <div id="video-menu"></div>    
+    <div id="video-menu" onclick="videoMenuOpen()">
+      <div id="video-container">
+      <div id="close-video-button"><i class="fa-solid fa-x" style="color: #ffffff;"></i></div>
+      <iframe id="ytplayer" src="https://www.youtube.com/embed/Qd_51NcAfzQ?si=G8WDTmP6N-O0zxDk?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowscriptaccess="always" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
     <div class="container">
       <div class="logo">
         <a href="https://www.youtube.com/@magalmarel/videos" target="_blank"> 
@@ -69,8 +76,9 @@
         </div>
         <!-- <div class="top-right"><i class="fa-solid fa-hand" style="color: #ffffff;"></i></div> -->
         <div class="bottom-right"><i class="fa-solid fa-angles-down" style="color: #ffffff;"></i></div>
-        <div class="centered">    
-          <button class="video-button"><i class="fa-solid fa-circle-play" style="padding-right: 5px;"></i>Смотреть видео</button> 
+        <div class="centered">   
+          <iframe class="video-offer" src="https://www.youtube.com/embed/Qd_51NcAfzQ?si=G8WDTmP6N-O0zxDk?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowscriptaccess="always" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <button class="video-button" onclick="videoMenuOpen()"><i class="fa-solid fa-circle-play" style="padding-right: 5px;"></i>Смотреть видео</button> 
           <!-- <iframe class="video-offer" src="https://www.youtube.com/watch?v=Qd_51NcAfzQ">
           </iframe>                       -->
         </div>        
@@ -285,6 +293,34 @@
             </p>
           </span>        
         </div>
+      </div>
+      <!-- Секция: Отзывы -->
+      <div class="reviews">
+        <div>
+          <h3>Отзывы</h3>
+          <p>Ниже вы можете почитать отзывы реальных людей в группе курса <a href="https://vk.com/topic-161227869_38441446?offset=40" target="_blank" style="color: rgb(53, 125, 225); text-decoration: underline;">ВКонтакте.</a>
+          <p>
+        </div>
+        <div class="reviews-imgs">
+          <div>
+            <img src="../assets/img/reviews/1.jpg" alt="Отзыв 1">
+            <img src="../assets/img/reviews/2.jpg" alt="Отзыв 2">
+            <img src="../assets/img/reviews/3.jpg" alt="Отзыв 3">
+            <img src="../assets/img/reviews/4.jpg" alt="Отзыв 4">          
+            <img src="../assets/img/reviews/5.jpg" alt="Отзыв 5">
+            <img src="../assets/img/reviews/6.jpg" alt="Отзыв 6">
+            <img src="../assets/img/reviews/7.jpg" alt="Отзыв 7">
+          </div>
+          <div>
+            <img src="../assets/img/reviews/8.jpg" alt="Отзыв 8">         
+            <img src="../assets/img/reviews/9.jpg" alt="Отзыв 9">
+            <img src="../assets/img/reviews/10.jpg" alt="Отзыв 10">
+            <img src="../assets/img/reviews/11.jpg" alt="Отзыв 11">
+            <img src="../assets/img/reviews/12.jpg" alt="Отзыв 12">          
+            <img src="../assets/img/reviews/13.jpg" alt="Отзыв 13">
+            <img src="../assets/img/reviews/14.jpg" alt="Отзыв 14">
+          </div>        
+        </div>        
       </div>
       <div id="programm"></div>
       <div class="programm">   

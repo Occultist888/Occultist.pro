@@ -35,6 +35,36 @@ function menuOpen() {
   }
 }
 
+// FUNCTION FOR VIDEO PLAYER AND MENU
+
+function videoMenuOpen() {
+  let videoMenu = document.getElementById("video-menu");   
+  let videoPlayer = document.getElementsByClassName("youtube-video");
+  if (videoMenu.style.display === "flex") {
+    videoMenu.style.display = "none";       
+    document.body.style.overflow = "visible";  
+    stopVideos();  
+  } else {    
+    videoMenu.style.display = "flex";    
+    document.body.style.overflow = "hidden";
+  }
+}
+
+/**
+ * Stop all iframes or HTML5 <video>'s from playing
+ */
+function stopVideos() {
+	var videos = document.querySelectorAll('iframe, video');
+	Array.prototype.forEach.call(videos, function (video) {
+		if (video.tagName.toLowerCase() === 'video') {
+			video.pause();
+		} else {
+			var src = video.src;
+			video.src = src;
+		}
+	});
+};
+
 // CARD SLIDER (OLD)
 
 let slideIndex = 1;

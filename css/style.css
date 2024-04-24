@@ -307,7 +307,7 @@ button {
   justify-content: center;
   align-items: center;  
   font-weight: 300;
-  top: 23%;  
+  top: 20%;  
 
 }
 
@@ -327,35 +327,52 @@ button {
   height: 80px;
   width: 100%;
   max-width: 400px;
-  transition: 0.3s;
+  
 }
 
-.centered .video-button:hover {
-  background-color: rgb(71, 0, 132);  
-  font-size: 105%;
-  transition: 0.3s;
-}
 
-#video-menu {   
-  display: none;  
-  flex-direction: column;
-  justify-content: start;
+
+#video-menu { 
+  display: none;     
+  justify-content: center;
   align-items: center;
   font-size: 25px;
   font-weight: 400;
   list-style-type: none; 
   gap: 10px;
-  min-height: 100%; 
-  background-color: black;
-  opacity: 90%;
-  height:100vh;    
+  /* min-height: 100%;    */
+  background-color: rgba(0,0,0,0.90);
+  height:100vh;     
 }
 
-.centered .video-offer {    
-    border: 0;
-    border-radius: 30px;
-    width: auto;
-    height: 300px;
+#video-container {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 100vw;  
+  margin-bottom: 50px;   
+  max-width: 800px;  
+}
+
+#video-menu #close-video-button {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+#video-menu iframe {    
+  width: 100vw;  
+  aspect-ratio: 16 / 9;  
+  max-width: 800px;
+  
+}
+
+
+.centered .video-offer {   
+  border: 0;
+  border-radius: 30px;
+  aspect-ratio: 16 / 9;
+  width: 70%;
 }
 
 
@@ -589,6 +606,46 @@ button {
     padding-bottom: 20px;
     line-height: 1.5;    
  }
+
+.reviews {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  
+}
+
+.reviews h3 {
+  text-align: left;
+  font-size: 46px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+
+.reviews p {
+  text-align: left;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 20px;
+  line-height: 1.5;    
+}
+
+
+
+.reviews .reviews-imgs {
+  display: flex;  
+}
+
+.reviews .reviews-imgs div {
+  margin: 5px;
+}
+
+.reviews-imgs img {
+  border-radius: 15px;
+  padding-bottom: 5px;  
+}
 
 
 .cards-how-to-study {
@@ -922,7 +979,7 @@ button {
 }
 
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 800px) { //old 670px
 
   #programm,
   #reviews,
@@ -1075,6 +1132,10 @@ button {
     margin-bottom: 40px;
   }
 
+  .centered .video-offer {    
+    display: none;
+  }
+
   .centered .video-button {
     display: block;    
   }
@@ -1186,8 +1247,29 @@ button {
   .how-to-study .cards-how-to-study .card-how-to-study {
         margin-bottom: 10px;
   }
-  
 
+  .reviews {
+    font-size: 20px;   
+    margin-bottom: 60px;
+  }
+  
+  .reviews h3 {
+    font-size: 30px;
+  }
+  
+  .reviews p {
+    flex-direction: column;    
+  }
+
+  .reviews .reviews-imgs div {
+    margin-inline: 2px;
+  }
+  
+  .reviews-imgs img {
+    border-radius: 10px;     
+    margin-block: -4px;
+  }
+  
   .programm .programm-rewiev {
     font-size: 20px;  
   }  
