@@ -65,6 +65,21 @@ function stopVideos() {
 	});
 };
 
+// FUNCTION FOR IMG MENU OPENER
+
+function imgMenuOpen(n) {
+  let imgMenu = document.getElementById("img-menu");  
+  let imgPreview = document.getElementById("img-preview");  
+  if (imgMenu.style.display === "flex") {
+    imgMenu.style.display = "none";       
+    document.body.style.overflow = "visible";         
+  } else {    
+    imgMenu.style.display = "flex";       
+    imgPreview.src = "../assets/img/reviews/"+n+".jpg";    
+    document.body.style.overflow = "hidden";    
+  }
+}
+
 // CARD SLIDER (OLD)
 
 let slideIndex = 1;
