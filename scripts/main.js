@@ -1,16 +1,13 @@
 // FUNCTION FOR STICKY NAVBAR
 
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {stickyNavbar()};
-
-// Get the header
-let navbar = document.getElementsByClassName("navbar");
-
-// Get the offset position of the navbar
-let sticky = navbar.offsetTop;
-
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function stickyNavbar() {
+  // Get the header
+  let navbar = document.querySelector(".navbar");
+
+  // Get the offset position of the navbar
+  let sticky = navbar.offsetTop;
+
   if (window.scrollY > sticky) {
     navbar.classList.add("sticky");
   } else {
@@ -68,6 +65,7 @@ function stopVideos() {
 // FUNCTION FOR IMG MENU OPENER
 
 function imgMenuOpen(n) {
+
   let imgMenu = document.getElementById("img-menu");  
   let imgPreview = document.getElementById("img-preview");  
   if (imgMenu.style.display === "flex") {
@@ -79,6 +77,37 @@ function imgMenuOpen(n) {
     document.body.style.overflow = "hidden";    
   }
 }
+
+function imgMenu() {
+
+  let img = document.getElementsByClassName("img-scaling");
+
+
+  for (let i = 0; i < img.length; i++) {
+    img[i].addEventListener("click", function() {
+      let index = i+1;
+      imgMenuOpen(index);  
+      imgMenuCenter();
+    });
+
+  }  
+
+}
+
+//Image on center in imgMenu, but allow scrolling when img hight is bigger then viewport
+
+function imgMenuCenter() {  
+  let img = document.getElementById("img-preview");
+  let closeImgButton = document.getElementById("close-img-button");
+  let imgContainerHeight = img.offsetHeight + closeImgButton.offsetHeight;
+  let viewportHeight = window.innerHeight;
+  if (viewportHeight > imgContainerHeight){
+    closeImgButton.style.marginTop = ((viewportHeight - imgContainerHeight) - closeImgButton.offsetHeight)/2 + 'px';     
+  } else {
+    closeImgButton.style.marginTop = '0px';
+  }
+}
+
 
 // CARD SLIDER (OLD)
 
@@ -116,26 +145,17 @@ function accordion() {
       /* Toggle between adding and removing the "active" class,
       to highlight the button that controls the panel */
       //closeAllItems(); //closing all other opened accordions
-      this.classList.toggle("active");      
-      
-
-      /* Toggle between hiding and showing the active panel */
-      let panel = this.getElementsByClassName("panel")[i];      
-      if (panel.style.maxHeight == '100vh') {
-        panel.style.maxHeight = '0vh';
-      } else {               
-          panel.style.maxHeight = '100vh';          
-      }
+      this.classList.toggle("active");  
       
     });
   }
 
-  function closeAllItems() {
-    const accordionItems = document.querySelectorAll('.accordion');
-    accordionItems.forEach(item => {
-      item.classList.remove('active');
-    });
-  }
+  // function closeAllItems() {
+  //   const accordionItems = document.querySelectorAll('.accordion');
+  //   accordionItems.forEach(item => {
+  //     item.classList.remove('active');
+  //   });
+  // }
 
 }
 
@@ -166,7 +186,17 @@ function copyEmail() {
 
 // ALL ONLOAD FUNCTIONS STARTS HERE
 
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", (event) => {
+  imgMenu(),
   accordion(), 
   lecturesDates()
+});
+
+window.addEventListener("resize", (event) => {
+  imgMenuCenter();
+});
+
+window.onscroll = function() {
+  stickyNavbar()
 };
+
