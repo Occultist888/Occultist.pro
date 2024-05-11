@@ -1,20 +1,3 @@
-// FUNCTION FOR STICKY NAVBAR
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyNavbar() {
-  // Get the header
-  let navbar = document.querySelector(".navbar");
-
-  // Get the offset position of the navbar
-  let sticky = navbar.offsetTop;
-
-  if (window.scrollY > sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
-  }
-} 
-
 // MOBILE MENU OPENER
 
 function menuOpen() {
@@ -96,18 +79,19 @@ function imgMenu() {
 
 //Image on center in imgMenu, but allow scrolling when img hight is bigger then viewport
 
+
 function imgMenuCenter() {  
-  let img = document.getElementById("img-preview");
+  let img = document.getElementById("img-preview");  
   let closeImgButton = document.getElementById("close-img-button");
-  let imgContainerHeight = img.offsetHeight + closeImgButton.offsetHeight;
+  let imgContainerHeight = img.offsetHeight + closeImgButton.offsetHeight;  
   let viewportHeight = window.innerHeight;
   if (viewportHeight > imgContainerHeight){
     closeImgButton.style.marginTop = ((viewportHeight - imgContainerHeight) - closeImgButton.offsetHeight)/2 + 'px';     
   } else {
     closeImgButton.style.marginTop = '0px';
   }
+      
 }
-
 
 // CARD SLIDER (OLD)
 
@@ -189,14 +173,14 @@ function copyEmail() {
 document.addEventListener("DOMContentLoaded", (event) => {
   imgMenu(),
   accordion(), 
-  lecturesDates()
+  lecturesDates()  
 });
 
 window.addEventListener("resize", (event) => {
   imgMenuCenter();
 });
 
-window.onscroll = function() {
-  stickyNavbar()
-};
+// window.onscroll = function() {
+//   stickyNavbar()
+// };
 
