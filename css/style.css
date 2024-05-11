@@ -667,6 +667,7 @@ button {
 .reviews-imgs img {
   border-radius: 15px;
   padding-bottom: 5px;    
+  cursor: zoom-in;
 }
 
 #img-menu { 
@@ -944,7 +945,7 @@ button {
   color: white;
   text-align: center;
   font-size: 25px;
-  cursor: pointer;
+  cursor: copy;
 }
 
 #signin-email i {
