@@ -84,11 +84,16 @@ function imgMenuCenter() {
   let img = document.getElementById("img-preview");  
   let closeImgButton = document.getElementById("close-img-button");
   let imgContainerHeight = img.offsetHeight + closeImgButton.offsetHeight;  
-  let viewportHeight = window.innerHeight;
-  if (viewportHeight > imgContainerHeight){
+  let viewportHeight = window.innerHeight;  
+  console.log(imgContainerHeight);
+  if (viewportHeight > imgContainerHeight && imgContainerHeight != 0){
     closeImgButton.style.marginTop = ((viewportHeight - imgContainerHeight) - closeImgButton.offsetHeight)/2 + 'px';     
-  } else {
+  } else if (viewportHeight < imgContainerHeight && imgContainerHeight != 0){
     closeImgButton.style.marginTop = '0px';
+  } else if (imgContainerHeight == 0){
+    setTimeout(imgMenuCenter, 200);
+    console.log("sleep");  
+    alert("sleep");  
   }
       
 }
@@ -183,4 +188,6 @@ window.addEventListener("resize", (event) => {
 // window.onscroll = function() {
 //   stickyNavbar()
 // };
+
+
 
