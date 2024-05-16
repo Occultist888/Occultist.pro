@@ -58,7 +58,8 @@ function imgMenuOpen(n) {
   } else {    
     imgMenu.style.display = "flex";       
     imgPreview.src = "../assets/img/reviews/"+n+".jpg";    
-    document.body.style.overflow = "hidden";    
+    document.body.style.overflow = "hidden";
+    imgMenuCenter();    
   }
 }
 
@@ -70,8 +71,7 @@ function imgMenu() {
   for (let i = 0; i < img.length; i++) {
     img[i].addEventListener("click", function() {
       let index = i+1;
-      imgMenuOpen(index);  
-      imgMenuCenter();
+      imgMenuOpen(index);       
     });
 
   }  
@@ -82,19 +82,19 @@ function imgMenu() {
 
 
 function imgMenuCenter() {  
+  let imgMenu = document.getElementById("img-menu");
   let img = document.getElementById("img-preview");  
   let closeImgButton = document.getElementById("close-img-button");
   let imgContainerHeight = img.offsetHeight + closeImgButton.offsetHeight;  
   let viewportHeight = window.innerHeight;  
-  console.log(imgContainerHeight);
+  // console.log(imgContainerHeight);
   if (viewportHeight > imgContainerHeight && imgContainerHeight != 0){
     closeImgButton.style.marginTop = ((viewportHeight - imgContainerHeight) - closeImgButton.offsetHeight)/2 + 'px';     
   } else if (viewportHeight < imgContainerHeight && imgContainerHeight != 0){
     closeImgButton.style.marginTop = '0px';
-  } else if (imgContainerHeight == 0){
+  } else if (imgContainerHeight == 0 && imgMenu.style.display === "flex") {
     setTimeout(imgMenuCenter, 200);
-    console.log("sleep");  
-    alert("sleep");  
+    console.log("sleep");      
   }
       
 }
