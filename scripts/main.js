@@ -53,7 +53,8 @@ function imgMenuOpen(n) {
   let imgPreview = document.getElementById("img-preview");  
   if (imgMenu.style.display === "flex") {
     imgMenu.style.display = "none";       
-    document.body.style.overflow = "visible";         
+    document.body.style.overflow = "visible";    
+    imgPreview.src = "";     
   } else {    
     imgMenu.style.display = "flex";       
     imgPreview.src = "../assets/img/reviews/"+n+".jpg";    
