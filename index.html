@@ -16,6 +16,7 @@
   <script src="https://kit.fontawesome.com/f337f94cc3.js" crossorigin="anonymous"></script>
     
   <script src="./scripts/main.js"></script> 
+  <script src="./scripts/quiz.js"></script> 
   <script src="https://www.youtube.com/iframe_api"></script>
   <title>Курс Рунической Магии</title>
 </head>
@@ -455,6 +456,7 @@
           </a>
         </div>        
       </div>
+      <!-- Секция: Вопрос / Ответ -->
       <div id="qna"></div>
       <div class="qna">   
         <div class="questions">
@@ -555,10 +557,25 @@
               Всем ученикам после окончания обучения будет предоставлена ссылка, по которой можно скачивать и просматривать лекции (облачное хранилище Google Диск). Эта ссылка будет доступна ученикам навсегда, а с YouTube лекции будут удалены через месяц, после окончания обучения. Если потеряете доступ к этой ссылке или она станет недоступна по каким-либо причинам, пишите в любой момент мне, и я отправлю ссылку на скачивание пройденных вами лекций. Поэтому не стоит волноваться, пройденный материал останется с вами навсегда, в любой момент можно будет освежить память по нему. 
             </p>
           </div>  
-        </button>
-
-
-    </div>  
+        </button> 
+      </div>  
+      <!-- Секция: Квиз по рунам -->
+      <div id="quiz"></div>
+      <div class="quiz">
+        <p id="quiz-questionmark">?</p>
+        <div class="quiz-rewiev">
+          <h3 id="question-number">Небольшой квиз по рунам</h3>
+          <h3 id="right-answers"></h3>
+          <p id="body-of-question"> Раз уж вы долистали до этого момента, то попробуйте ответить на несколько вопросов о рунах</p>          
+        </div>      
+        <div id="question-options">
+          <button id="question-option1"></button>
+          <button id="question-option2"></button>
+          <button id="question-option3"></button>
+        </div>
+        <div id="quiz-btn-div"><button id="quiz-btn" value="0" onclick="quizStarter();">Начать квиз</button></div>    
+      </div>  
+      
   </div>
   <div class="footer">
 

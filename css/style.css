@@ -32,7 +32,8 @@ button, input[type="submit"], input[type="reset"] {
 #programm,
 #reviews,
 #price,
-#qna {
+#qna,
+#quiz {
   margin-top: -140px;
   position: absolute;  
 }
@@ -960,6 +961,10 @@ button {
 #signin-email:hover i {
       color: #56d9c9;
 }
+
+.qna {
+  margin-bottom: 60px;
+}
   
 .qna div.question {
     width: 100%;
@@ -1029,6 +1034,106 @@ button {
 }
 
 
+.quiz {
+  margin-bottom: 60px;
+  border: 5px solid;
+  border-color: var(--clr-purple);
+  border-radius: 30px;
+  padding: 20px;
+  
+}
+
+.quiz #quiz-questionmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 50px;
+  height: 50px;  
+  /* border: 2px solid; */
+  border-radius: 100%;
+  background-color: var(--clr-purple);
+  font-size: 40px;
+  font-weight: 400;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  
+}
+
+.quiz-rewiev {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.quiz-rewiev h3 {
+    text-align: center;
+    font-size: 46px;
+    /* margin-left: 20px;
+    padding-bottom: 10px; */
+    line-height: 1;
+}
+
+.quiz-rewiev #right-answers {
+  display: none;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 25px;
+}
+
+.quiz-rewiev p {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;  
+  line-height: 1;
+}
+
+.quiz #question-options {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: raw;
+  gap: 10px; 
+}
+
+.quiz #question-options button {  
+  justify-content: center;
+  align-items: center;     
+  font-size: 25px;  
+  border: 3px solid var(--clr-purple);
+  border-radius: 30px;
+  font-weight: 500;
+  height: 80px;
+  width: 100%;
+  /* max-width: 400px; */
+}
+
+
+.quiz #quiz-btn {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--clr-purple);  
+  font-size: 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  height: 80px;
+  width: 100%;
+  /* max-width: 400px; */
+}
+
+.quiz #quiz-btn-div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 @media (max-width: 1100px) {
 
@@ -1048,7 +1153,8 @@ button {
   #programm,
   #reviews,
   #price,
-  #qna {
+  #qna,
+  #quiz {
     margin-top: -80px;
     position: absolute;  
   }
@@ -1398,12 +1504,11 @@ button {
   .signin .signin-how-to .signin-buttons #signin-VK {
         font-size: 20px;
   }
-  
-  
+    
   .qna h3 {
     text-align: center;
     font-size: 30px;              
-  }
+  }  
 
   .qna .accordion h4 {
     font-size: 23px;    
@@ -1416,6 +1521,44 @@ button {
 
   .qna div.question i {  
     font-size: 20px;      
+  }
+
+  .quiz {
+    border: 3px solid var(--clr-purple);
+  }
+
+  .quiz #quiz-questionmark {
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .quiz h3 {
+    font-size: 30px;  
+  }
+
+  .quiz p {
+    line-height: 1.2;
+  }
+
+  /* .quiz #body-of-question {
+
+  } */
+
+  .quiz #question-options {    
+    justify-content: center;    
+    flex-direction: column;
+    gap: 10px;
+    width:100%;
+  }
+
+  .quiz #quiz-btn {    
+    font-size: 24px;
+    width:100%;
+  }
+
+  .quiz #quiz-btn-div {
+    margin-top: 10px;    
   }
     
 }
