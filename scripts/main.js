@@ -1,18 +1,17 @@
 // MOBILE MENU OPENER
 
 function menuOpen() {
-  mobileMenu = document.getElementById("mobile-menu");
-  menuButton = document.getElementById("menu-button");
-  if (mobileMenu.style.display === "flex") {
-    mobileMenu.style.display = "none";    
-    menuButton.className = "fa-solid fa-bars";  
+  mobileMenu = document.getElementById("mobile-menu");  
+  bars = document.getElementById('menu-icon');  
+  if (mobileMenu.style.display === "flex") {    
+    mobileMenu.style.display = "none";         
     document.body.style.overflow = "visible"; 
   } else {    
-    mobileMenu.style.display = "flex";    
-    menuButton.className = "fa-solid fa-x";    
+    mobileMenu.style.display = "flex";       
     document.body.style.overflow = "hidden";
     // document.documentElement.style.overflow = "hidden";
   }
+  bars.classList.toggle('open');
 }
 
 // FUNCTION FOR VIDEO PLAYER AND MENU
